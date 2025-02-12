@@ -1,10 +1,18 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column; /* Allows stacking of elements */
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: auto; /* Enables scrolling */
     background-color: #f4f4f4;
-    color: #333;
+    margin: 0;
+    padding: 20px; /* Prevents content from touching the edges */
+}
+
+main{
+    flex-direction: column;
 }
 
 /* Header */
@@ -64,7 +72,77 @@ footer {
     padding: 15px;
     background: #333;
     color: white;
-    position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+
+/* Container to stack cards horizontally */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Flip Card Container */
+.flip-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+/* Flip Card Inner */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Flip Effect */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Styling */
+.flip-card-front, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Front Side */
+.flip-card-front {
+    background: white;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Back Side */
+.flip-card-back {
+    background: #007BFF;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.flip-card-back h2 {
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    margin: 5px 0;
 }
