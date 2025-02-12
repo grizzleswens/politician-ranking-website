@@ -6,9 +6,13 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-y: auto; /* Enables scrolling */
-    background-color: #f4f4f4;
     margin: 0;
     padding: 20px; /* Prevents content from touching the edges */
+    background-image: url('/static/images/background.jpg');  /* Correct file path */
+
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    
 }
 
 main{
@@ -145,4 +149,16 @@ footer {
 
 .flip-card-back p {
     margin: 5px 0;
+}
+
+.card-number {
+    position: absolute;
+    bottom: 10px;  /* Adjust position from the bottom */
+    right: 10px;   /* Adjust position from the right */
+    font-size: 2.5em;  /* Large number */
+    font-weight: bold;
+    color: black;   /* Black color */
+    background-color: rgba(255, 255, 255, 0.7);  /* Optional: Semi-transparent background */
+    padding: 5px 10px;  /* Space around the number */
+    border-radius: 5px; /* Rounded corners */
 }
